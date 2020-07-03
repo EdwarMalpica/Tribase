@@ -27,8 +27,10 @@ public class MyProperties extends Properties {
 	  */
 	
 	public MyProperties() {
+		
 		 try {
-			this.load(new FileInputStream("C:\\Users\\USUARIO\\eclipse-workspace-2020\\TriBase\\src\\properties\\userSettings.properties"));
+			 String path = MyProperties.class.getResource("userSettings.properties").getPath();
+			 this.load(new FileInputStream(path));
 		} catch (IOException e) {
 			 initDefaultProperties();	
 			 saveConfiguration();
@@ -45,7 +47,8 @@ public class MyProperties extends Properties {
 	private void loadLanguage() {
 		defaultLanguage = new Properties();
 		try {
-			defaultLanguage.load(new FileInputStream("C:\\Users\\USUARIO\\eclipse-workspace-2020\\TriBase\\src\\properties\\in.properties"));
+			 String path = MyProperties.class.getResource("in.properties").getPath();
+			defaultLanguage.load(new FileInputStream(path));
 			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -54,9 +57,9 @@ public class MyProperties extends Properties {
 		}
 		try {
 			language = new Properties();
-			language.load(new FileInputStream("C:\\Users\\USUARIO\\eclipse-workspace-2020\\TriBase\\src\\properties\\"+this.getProperty("language")+".properties"));
+			language.load(new FileInputStream(MyProperties.class.getResource(this.getProperty("language")+".properties").getPath()));
 		} catch (IOException e) {
-			// TODO Bloque catch generado automáticamente
+			// TODO Bloque catch generado automï¿½ticamente
 			e.printStackTrace();
 		}
 	}
@@ -82,7 +85,8 @@ public class MyProperties extends Properties {
 	 */
 	public void saveConfiguration() {
 		try {
-			this.store(new FileOutputStream("C:\\Users\\USUARIO\\eclipse-workspace-2020\\TriBase\\src\\properties\\userSettings.properties"), "UserProperties");
+			System.out.println("entre perro");
+			this.store(new FileOutputStream(MyProperties.class.getResource("").getPath()+"userSettings.properties"),"UserProperties");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -90,7 +94,7 @@ public class MyProperties extends Properties {
 	
 //	public static void main(String[] args) {
 //		MyProperties pro = new MyProperties();
-//		System.out.println(pro.getKeyLanguage("nombre"));
+//		System.out.println(pro.getKeyLanguage("appInfo"));
 //	}
 	
 }

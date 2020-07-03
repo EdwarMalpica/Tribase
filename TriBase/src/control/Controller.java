@@ -3,10 +3,10 @@ package control;
 import model.*;
 import properties.MyProperties;
 import view.ViewPrincipal;
-import view.ViewUser;
+//import view.ViewUser;
 import java.lang.NumberFormatException;
 import java.lang.StringIndexOutOfBoundsException;
-import java.util.Properties;
+
 
 
 /**
@@ -20,7 +20,7 @@ import java.util.Properties;
 public class Controller {
 	
 	private ViewPrincipal view;
-	private ViewUser viU;
+	//private ViewUser viU;
 	private Manager ma;
 	private MyProperties pro;
 /**
@@ -30,8 +30,8 @@ public class Controller {
  */
 	public Controller() {
 		pro = new MyProperties();
-		viU = new ViewUser();
-		view = new ViewPrincipal(pro);
+		//viU = new ViewUser();
+		view = new ViewPrincipal(getPro());
 		
 		//ma = new Manager(3.77,50.69,68.16,1);
 		
@@ -45,8 +45,6 @@ public class Controller {
 	 * del valor obtenido por la vista
 	 */
 	private void init() {
-		
-		viU.sendMessageMenu();
 		try {
 			switch (validateOpcion(view.getMenuOpcion())) {
 			case 1:
@@ -294,6 +292,15 @@ public class Controller {
 		return result;
 		
 	}
+	
+	public MyProperties getPro() {
+		return pro;
+	}
+
+	public void setPro(MyProperties pro) {
+		this.pro = pro;
+	}
+
 	/**
 	 * metodo que se encarga de cerrar las instancias iniciadas en el programa
 	 */

@@ -1,4 +1,4 @@
-import view.Splash;
+
 
 public class TestSplash {
 

@@ -47,7 +47,6 @@ public class MenuDesing {
 		finalString7 = addSpace(string7, ConstantsSpaceString.MENU_String_7);
 		finalString8 = addSpace(string8, ConstantsSpaceString.MENU_String_8);
 		finalString9 = addSpace(string9, ConstantsSpaceString.MENU_String_9);
-		
 	}
 	
 	

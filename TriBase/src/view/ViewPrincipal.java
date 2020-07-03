@@ -94,7 +94,7 @@ public class ViewPrincipal {
 		scanner.close();
 	}
 	
-	public static void main(String[] args) {
-		//new ViewPrincipal();
-	}
+//	public static void main(String[] args) {
+//		//new ViewPrincipal();
+//	}
 }

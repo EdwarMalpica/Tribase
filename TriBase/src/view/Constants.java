@@ -15,7 +15,13 @@ public class Constants {
 	
 	public Constants(MyProperties myProperties){
 		this.myProperties = myProperties;
-		
+		generateAppInfo();
+		generateMenuOpcions();
+		generateMenuInfo();
+		generateFormContent();
+		generateErrorContent();
+		generateExitContent();
+		generateResultContent();
 	}
 	
 
